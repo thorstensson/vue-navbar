@@ -1,0 +1,34 @@
+// Colors
+$clr-primary: #000814; /*bg*/
+$clr-secondary: #f8f9fa; /*font*/
+
+// Fonts
+$sans-ui: "Figtree", sans-serif;
+$sans-ui-opt: auto;
+$sans-ui-wt-def: 600;
+$sans-ui-wt-alias: 400;
+$sans-ui-stl: normal;
+
+$sans-text: "Outfit", sans-serif;
+$sans-text-opt: auto;
+$sans-text-wt-def: 600;
+$sans-text-wt-alias: 400;
+$sans-text-stl: normal;
+
+// Sizes
+$h1: 80px;
+$h1-lg: 100px;
+$h1-xl: 140px;
+$h1-xxl: 160px;
+
+//Padding
+$page-lpad: 10px;
+$page-lpad-lg: 30px;
+$page-lpad-xl: 60px;
+$page-lpad-xxl: 70px;
+
+//wont need these when flexbox
+$page-rpad: 20px;
+$page-rpad-lg: 70px;
+$page-rpad-xl: 130px;
+$page-rpad-xxl: 270px;

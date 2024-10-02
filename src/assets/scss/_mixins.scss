@@ -1,0 +1,9 @@
+@use "variables";
+
+@mixin blend-mode-difference {
+    mix-blend-mode: difference;
+    background-clip: text;
+    background-color: variables.$clr-primary;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

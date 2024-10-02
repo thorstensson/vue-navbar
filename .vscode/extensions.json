@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "rain.vue-scss-variable-scan"
+  ]
+}
