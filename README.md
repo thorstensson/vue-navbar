@@ -17,8 +17,9 @@
   <a href="#how-to-use">How To Use</a> •
   <a href="#license">License</a>
 </p>
-
-![screenshot](https://github.com/user-attachments/assets/e6e649ca-7c21-45e4-af13-03aeb8b5385d)
+<img align="center">
+![vue-navbar-optim](https://github.com/user-attachments/assets/2e22a573-fadc-48b7-b431-4810c34d6b39)
+</img>
 
 ## How To Use
 

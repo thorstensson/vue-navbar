@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SimplePage from '@/components/SimplePage.vue';
+import SimplePage from '@/views/SimplePage.vue';
 
 const routes = [
   {
