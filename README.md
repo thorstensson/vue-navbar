@@ -43,6 +43,6 @@ MIT
 
 ---
 
-> Next up: a retro and bold text scroller!
+> Next up: a retro and bold text scroller, also vue.
 
 
