@@ -18,7 +18,7 @@
   <a href="#license">License</a>
 </p>
 <img align="center">
-![vue-navbar-optim](https://github.com/user-attachments/assets/2e22a573-fadc-48b7-b431-4810c34d6b39)
+![screenshot](https://github.com/user-attachments/assets/2e22a573-fadc-48b7-b431-4810c34d6b39)
 </img>
 
 ## How To Use
