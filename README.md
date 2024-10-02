@@ -5,7 +5,7 @@
   <br>
 </h1>
 
-<h4 align="center">A minimal navbar written with the Vue 3+ composition API.<a href="http://electron.atom.io" target="_blank">Electron</a>.</h4>
+<h4 align="center">A minimal navbar written with the Vue 3+ composition API.</h4>
 
 <p align="center">
 <img alt="Static Badge" src="https://img.shields.io/badge/vue_v_3.4.27-vite_5.4.8-green">
@@ -26,7 +26,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://blebb
+$ git clone https://github.com/thorstensson/vue-navbar.git
 
 # Go into the repository
 $ cd vue-navbar
