@@ -1,16 +1,11 @@
 <script setup>
-/**
- * Atomized Page component(s) to come, also ones that make use of GSAP.
- * The below is just so Navbar has something to work with!
- */
-
 import { ref, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { watch } from 'vue';
 import json from '../assets/json/mockdata.json';
+
 const route = useRoute()
 const router = useRouter()
-
 const data = ref({ title: '', content: '' });
 
 watch(
@@ -26,18 +21,23 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="page">
-        <h1 class="page__heading"> {{ data.title }}</h1>
-        <p class="page__paragraph">{{ data.content }}</p>
+    <div class="page-wrapper">
+        <div class="page-text">
+            <h1 class="page-text__heading"> {{ data.title }}</h1>
+            <p class="page-text__paragraph">{{ data.content }}</p>
+        </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.page {
-    /*TODO:flexbox solution*/
+.page-wrapper {
     position: absolute;
-    top: 120px;
-    color: #f8f9fa;
+}
+
+.page-text {
+    margin-left: 0;
+    margin-top: 120px;
+    color: $clr-secondary;
     padding-left: $page-lpad;
     padding-right: $page-rpad;
 
@@ -45,7 +45,7 @@ onMounted(() => {
         font-family: $sans-text;
         font-size: $h1;
         margin-bottom: 40px;
-        caret-color:transparent;
+        caret-color: transparent;
     }
 
     &__paragraph {
@@ -53,7 +53,7 @@ onMounted(() => {
         font-size: 20px;
     }
 
-    @media only screen and (min-width: 992px) {
+    @include this-and-above('lg') {
         padding-left: $page-lpad-lg;
         padding-right: $page-rpad-lg;
 
@@ -62,7 +62,7 @@ onMounted(() => {
         }
     }
 
-    @media only screen and (min-width: 1200px) {
+    @include this-and-above('xl') {
         padding-left: $page-lpad-xl;
         padding-right: $page-rpad-xl;
 
@@ -71,7 +71,7 @@ onMounted(() => {
         }
     }
 
-    @media only screen and (min-width: 1400px) {
+    @include this-and-above('xxl') {
         padding-left: $page-lpad-xxl;
         padding-right: $page-rpad-xxl;
 

@@ -21,7 +21,7 @@
     font-size: 15px;
     line-height: 1.2;
 
-    @media only screen and (min-width: 992px) {
+    @include this-and-above('lg') {
         display: none;
     }
 }
@@ -29,11 +29,10 @@
 .modal-hr {
     position: absolute;
     width: 100%;
-    bottom: 70px;
+    bottom: 60px;
     right: 0;
     border: none;
     height: 2px;
-    /* Set the hr color thinner line trick */
     color: black;
     background-color: black;
 }

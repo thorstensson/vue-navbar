@@ -1,14 +1,13 @@
 <script setup>
 import { RouterView } from 'vue-router';
 import Navbar from './components/Navbar.vue';
-import { Transition } from 'vue';
 </script>
 
 <template>
-   <nav>
-      <Navbar />
-    </nav>
-  <div class="wrapper">
+  <nav>
+    <Navbar />
+  </nav>
+  <div class="container-app">
     <RouterView v-slot="{ Component }">
       <Transition name="fade">
         <component :key="$route.path" :is="Component" />
@@ -29,21 +28,24 @@ body {
 }
 
 body {
-  min-height:100vh;
+  min-height: 100vh;
 }
 
-/*full width, pages will set their own padding*/
-.wrapper {
+.container-app {
+  background-color: blue;
   max-width: 100%;
+  display: flex;
 }
 
 .fade-enter-active,
 .fade-leave-active {
+  position: absolute;
   transition: opacity 0.5s ease;
 }
 
 .fade-enter-from,
 .fade-leave-to {
+  position: absolute;
   opacity: 0;
 }
 </style>

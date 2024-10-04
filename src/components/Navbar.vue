@@ -35,20 +35,20 @@ checkScreenWidth();
 
 <template>
 
-    <div class="container-fixed">
-        <div class="container-nav">
+    <div class="nav-wrapper">
+        <div class="nav-wrapper__inner">
 
-            <NavHeader class="container-header" :class="{ 'container-header--alt-color': isMobileActive }">
+            <NavHeader class="header-wrapper" :class="{ 'header-wrapper--alt-color': isMobileActive }">
                 <template #name>
-                    &bull; THORSTENSSON
+                    &bull; Thorstensson
                 </template>
                 <template #contact>
-                    VUE DEVELOPER/DESIGNER<br>
-                    THOMAS.THORSTENSSON@GMAIL.COM
+                    Vue Developer / Designer<br>
+                    Thomas.Thorstensson@gmail.com
                 </template>
                 <template #social>
-                    <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LINKEDIN/</a><br>
-                    <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>&nbsp;FLICKR</a>
+                    <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn / </a><br>
+                    <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>&nbsp;Flickr</a>
                 </template>
             </NavHeader>
 
@@ -57,27 +57,27 @@ checkScreenWidth();
 
                     <router-link to="/home" custom v-slot="{ isActive, navigate, href, route }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
-                            :class="{ 'nav--link-active': isActive }">HOME</li>
+                            :class="{ 'nav--link-active': isActive }">Home</li>
                     </router-link>
 
                     <router-link to="/work" custom v-slot="{ isActive, navigate, href, route }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
-                            :class="{ 'nav--link-active': isActive }">WORK</li>
+                            :class="{ 'nav--link-active': isActive }">Work</li>
                     </router-link>
 
                     <router-link to="/about" custom v-slot="{ isActive, navigate, href, route }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
-                            :class="{ 'nav--link-active': isActive }">ABOUT</li>
+                            :class="{ 'nav--link-active': isActive }">About</li>
                     </router-link>
                 </ul>
 
                 <NavMobileFooter class="footer-wrapper">
                     <template #contact>
-                        THOMAS.THORSTENSSON@GMAIL.COM<br />
+                        Thomas.Thorstensson@gmail.com<br />
                     </template>
                     <template #social>
-                        <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LINKEDIN<br></a>
-                        <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>FLICKR</a>
+                        <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn<br></a>
+                        <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>Flickr</a>
                     </template>
                 </NavMobileFooter>
             </div>
@@ -104,14 +104,17 @@ checkScreenWidth();
     user-select: none;
 }
 
-/*flexbox doesn't go well with fixed so we use another container heaven*/
-.container-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin: auto;
-  width: 100%;
-  z-index:999;
+/* 
+Flexbox doesn't go well with fixed so we use another container heaven.
+I prefer to control child component wrappers from parent. 
+*/
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 999;
 }
 
 a,
@@ -123,7 +126,7 @@ a:visited {
     text-decoration: none;
 }
 
-.container-nav {
+.nav-wrapper__inner {
     justify-content: space-between;
     display: flex;
     flex: 0 1 auto;
@@ -137,7 +140,7 @@ a:visited {
     background-color: $clr-primary;
 }
 
-.container-header {
+.header-wrapper {
     display: flex;
     align-items: center;
     flex: 1 1 auto;
@@ -145,8 +148,6 @@ a:visited {
     color: $clr-secondary;
     font-weight: isColorDark($clr-primary);
 
-    /*when modal menu slides in colors are --inverted so we check against clr-secondary. the font weight fix on dark bg is all a little out there
-    feel free to fork, remove*/
     &--alt-color {
         color: $clr-primary;
         font-weight: isColorDark($clr-secondary);
@@ -155,15 +156,14 @@ a:visited {
 
 .footer-wrapper {
     position: absolute;
-    right: 30px;
-    bottom: 30px;
+    right: 20px;
+    bottom: 15px;
     width: auto;
     text-align: right;
 
     :deep(.contact),
     :deep(.social) {
         font-weight: isColorDark($clr-secondary);
-        /*primary is bg col but for modal inverse and we only see footer when modal open*/
     }
 }
 
@@ -172,7 +172,7 @@ a:visited {
     top: 0;
     left: 0%;
     width: 100%;
-    /*in moddal view font and background colors are inverted*/
+    // In moddal view font and background colors are inverted.
     color: $clr-primary;
     background-color: $clr-secondary;
     transition: left 0.3s;
@@ -181,7 +181,6 @@ a:visited {
 
     &--open {
         font-weight: $sans-ui-wt-def;
-        /*big bold text no need to calc font weight*/
         left: 0%;
         opacity: 1;
         transition: opacity, .4s;
@@ -208,12 +207,14 @@ a:visited {
         cursor: pointer;
         font-size: 60px;
         white-space: nowrap;
+        line-height: 1.1;
     }
 
     &__item::before {
         content: "";
         opacity: 0;
         transition: opacity .5s ease-in-out;
+        line-height: 1;
     }
 
     &__item:hover::before,
@@ -226,7 +227,8 @@ a:visited {
 
     }
 
-    @media only screen and (min-width: 992px) {
+    // Switch to desktop
+    @include this-and-above('lg') {
         transition: none;
         position: relative;
         width: initial;
@@ -236,13 +238,16 @@ a:visited {
 
         &--closed {
             opacity: 1;
-            /*simple way to avoid transsition upon resize desktop to mobile*/
             left: unset;
             right: 0;
         }
 
         &__list {
             margin: 0;
+        }
+        
+        &__item::before {
+            line-height: unset;
         }
 
         &__item {
@@ -251,6 +256,7 @@ a:visited {
             margin: 0 0 0 30px;
             position: relative;
             font-size: 16px;
+            line-height:unset;
         }
 
         &__item:hover::before,
@@ -260,7 +266,7 @@ a:visited {
     }
 }
 
-/*for this svg I wont apply the inception rule, yikes*/
+// For this svg I wont apply the inception rule, yikes. 
 .burger {
     z-index: 20;
     transition: transform 1.5s;
@@ -335,8 +341,8 @@ a:visited {
         }
     }
 
-    /*bubbles*/
-    @media only screen and (min-width: 992px) {
+    // Bubbles
+    @include this-and-above('lg') {
         display: none;
     }
 }

@@ -1,6 +1,6 @@
 // Colors
-$clr-primary: #000814; /*bg*/
-$clr-secondary: #f8f9fa; /*font*/
+$clr-primary: #000814; // bg
+$clr-secondary: #f8f9fa; // font
 
 // Fonts
 $sans-ui: "Figtree", sans-serif;
@@ -21,14 +21,13 @@ $h1-lg: 100px;
 $h1-xl: 140px;
 $h1-xxl: 160px;
 
-//Padding
-$page-lpad: 10px;
-$page-lpad-lg: 30px;
+// Padding
+$page-lpad: 20px;
+$page-lpad-lg: 60px;
 $page-lpad-xl: 60px;
 $page-lpad-xxl: 70px;
 
-//wont need these when flexbox
 $page-rpad: 20px;
-$page-rpad-lg: 70px;
-$page-rpad-xl: 130px;
-$page-rpad-xxl: 270px;
+$page-rpad-lg: 300px;
+$page-rpad-xl: 300px;
+$page-rpad-xxl: 460px;

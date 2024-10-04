@@ -29,14 +29,14 @@ const slots = useSlots();
 .name:empty,
 .contact:empty,
 .social:empty {
-    display:none;
+    display: none;
 }
 
 .contact,
 .social {
     display: none;
 
-    @media only screen and (min-width: 992px) {
+    @include this-and-above('lg') {
         display: inline;
     }
 }
