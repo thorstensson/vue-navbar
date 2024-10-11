@@ -13,12 +13,13 @@
 <img alt="Static Badge" src="https://img.shields.io/badge/composition_api-script_setup-blue">
 </p>
 
-<p align="center">•
-  <a href="#how-to-use">How To Use</a> •
+<p align="center">
+  <a href="#how-to-use">How To Use</a> 
   <a href="#license">License</a>
 </p>
-
-<p align="center">![navbar](https://github.com/user-attachments/assets/4f694724-a319-4d57-a91c-d5a44fea745e)</p>
+<p align="center">
+<img src="https://github.com/user-attachments/assets/02a6c6c5-7c0c-428e-a781-dedc169523db" />
+</p>
 
 ## How To Use
 
@@ -44,5 +45,3 @@ MIT
 ---
 
 > Next up: a retro and bold text scroller, also vue.
-
-
