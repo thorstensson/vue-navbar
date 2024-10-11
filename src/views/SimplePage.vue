@@ -57,7 +57,7 @@ onMounted(() => {
         padding-left: $page-lpad-lg;
         padding-right: $page-rpad-lg;
 
-        &__heading {
+        &__heading { 
             font-size: $h1-lg;
         }
     }

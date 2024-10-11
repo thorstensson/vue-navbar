@@ -20,6 +20,7 @@
     color: $clr-primary;
     font-size: 15px;
     line-height: 1.2;
+    text-decoration: none;
 
     @include this-and-above('lg') {
         display: none;

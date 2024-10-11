@@ -44,12 +44,12 @@ checkScreenWidth();
                 </template>
                 <template #contact>
                     Vue Developer / Designer<br>
-                    Thomas.Thorstensson@gmail.com
+                    <a href="mailto:someone@example.com">Thomas.Thorstensson@gmail.com</a>
                 </template>
                 <template #social>
                     <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn / </a><br>
                     <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>&nbsp;Flickr</a>
-                </template>
+                </template>b
             </NavHeader>
 
             <div class="nav" :class="[isMobileActive ? 'nav--open' : 'nav--closed']">
@@ -73,7 +73,7 @@ checkScreenWidth();
 
                 <NavMobileFooter class="footer-wrapper">
                     <template #contact>
-                        Thomas.Thorstensson@gmail.com<br />
+                        <a href="mailto:someone@example.com">Thomas.Thorstensson@gmail.com</a><br />
                     </template>
                     <template #social>
                         <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn<br></a>
@@ -115,6 +115,7 @@ I prefer to control child component wrappers from parent.
     margin: auto;
     width: 100%;
     z-index: 999;
+    overscroll-behavior-y: contain;
 }
 
 a,
@@ -168,28 +169,27 @@ a:visited {
 }
 
 .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0%;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    height: 100vh;
     // In moddal view font and background colors are inverted.
     color: $clr-primary;
     background-color: $clr-secondary;
-    transition: left 0.3s;
-    height: 100vh;
-    font-weight: isColorDark($clr-primary);
+    transition: left .4s cubic-bezier(.075, .82, .165, 1);
+
+
 
     &--open {
         font-weight: $sans-ui-wt-def;
         left: 0%;
-        opacity: 1;
-        transition: opacity, .4s;
     }
 
     &--closed {
         left: -100%;
-        transition: opacity, .4s;
-        opacity: 0;
     }
 
     &__list {
@@ -224,7 +224,6 @@ a:visited {
         white-space: nowrap;
         left: -28px;
         opacity: 1;
-
     }
 
     // Switch to desktop
@@ -235,6 +234,7 @@ a:visited {
         height: 80px;
         background-color: $clr-primary;
         color: $clr-secondary;
+        font-weight: isColorDark($clr-primary);
 
         &--closed {
             opacity: 1;
@@ -245,7 +245,7 @@ a:visited {
         &__list {
             margin: 0;
         }
-        
+
         &__item::before {
             line-height: unset;
         }
@@ -256,7 +256,7 @@ a:visited {
             margin: 0 0 0 30px;
             position: relative;
             font-size: 16px;
-            line-height:unset;
+            line-height: unset;
         }
 
         &__item:hover::before,
