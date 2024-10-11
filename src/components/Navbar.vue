@@ -108,6 +108,13 @@ checkScreenWidth();
 Flexbox doesn't go well with fixed so we use another container heaven.
 I prefer to control child component wrappers from parent. 
 */
+
+
+.modal-open {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .nav-wrapper {
     position: fixed;
     top: 0;
@@ -115,7 +122,7 @@ I prefer to control child component wrappers from parent.
     margin: auto;
     width: 100%;
     z-index: 999;
-    overscroll-behavior-y: contain;
+    overflow:hidden;
 }
 
 a,
@@ -172,8 +179,6 @@ a:visited {
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
     width: 100%;
     height: 100vh;
     // In moddal view font and background colors are inverted.
@@ -186,6 +191,11 @@ a:visited {
     &--open {
         font-weight: $sans-ui-wt-def;
         left: 0%;
+        touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden;
+    /* Other browsers */
+    overscroll-behavior: none;
     }
 
     &--closed {

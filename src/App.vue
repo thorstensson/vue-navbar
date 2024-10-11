@@ -27,14 +27,8 @@ body {
   -o-font-smoothing: antialiased;
 }
 
-html{
-  overflow: hidden;
-  overscroll-behavior: none;
-}
-
 body {
   min-height: 100vh;
-  overscroll-behavior-y: contain;
 }
 
 .container-app {
