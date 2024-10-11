@@ -18,7 +18,7 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://github.com/user-attachments/assets/2e22a573-fadc-48b7-b431-4810c34d6b39)
+<p align="center">![navbar](https://github.com/user-attachments/assets/4f694724-a319-4d57-a91c-d5a44fea745e)</p>
 
 ## How To Use
 
