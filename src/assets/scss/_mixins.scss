@@ -1,5 +1,6 @@
 @use "variables";
 
+
 @mixin blend-mode-difference {
     mix-blend-mode: difference;
     background-clip: text;

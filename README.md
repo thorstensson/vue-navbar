@@ -1,47 +1,55 @@
+![navbar](https://github.com/user-attachments/assets/02a6c6c5-7c0c-428e-a781-dedc169523db)
 
-<h1 align="center">
-  <br>
-  Vue 3 Navbar
-  <br>
-</h1>
+![Static Badge](https://img.shields.io/badge/vue_v_3.4.27-vite_5.4.8-green) 
 
-<h4 align="center">A minimal navbar written with the Vue 3+ composition API.</h4>
+# NavBar - Vue - JS - BEM
 
-<p align="center">
-<img alt="Static Badge" src="https://img.shields.io/badge/vue_v_3.4.27-vite_5.4.8-green">
-<img alt="Static Badge" src="https://img.shields.io/badge/dependencies-relatively_up_to_date-orange">
-<img alt="Static Badge" src="https://img.shields.io/badge/composition_api-script_setup-blue">
-</p>
+A simple and responsive navigation bar with full modal on smaller devices. Hides on scroll down. Needed to code this up, to refresh my mind on how to, instead of using a component library. BEM makes it easier, still a semantic fan.
 
-<p align="center">
-  <a href="#how-to-use">How To Use</a> 
-  <a href="#license">License</a>
-</p>
-<p align="center">
-<img src="https://github.com/user-attachments/assets/02a6c6c5-7c0c-428e-a781-dedc169523db" />
-</p>
+## Demo
 
-## How To Use
+👉 Netlify: https://minimlnavbar.netlify.app/ 
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+## Run Locally
+
+Clone the project
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/thorstensson/vue-navbar.git
-
-# Go into the repository
-$ cd vue-navbar
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm run dev —or if you want to test on local network: npm run dev -- --host
+  git clone https://github.com/thorstensson/vue-navbar.git
 ```
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+## Roadmap
+
+- [X] Tidy up overwritten (S)CSS.
+
+- [X] Add hide animation on scroll down.
+
+- [ ] Room for anything I haven't thought of yet.
+
+## Contributing
+
+Fork and improve, I write too much CSS!
+
 ## License
 
-MIT
+[MIT](https://choosealicense.com/licenses/mit/)
 
----
 
-> Next up: a retro and bold text scroller, also vue.
+
+

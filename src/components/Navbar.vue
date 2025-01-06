@@ -3,8 +3,17 @@ import { ref, onBeforeUnmount } from 'vue';
 import NavHeader from './NavHeader.vue';
 import NavMobileFooter from './NavMobileFooter.vue';
 
+const isDown = ref(false);
 const isMobileActive = ref(false);
 const screenWidth = ref(window.innerWidth);
+
+let currScrollPos;
+let prevScrollPos;
+
+/**
+ * A minimal & responsive navbar for those who like BEM with &.
+ * Turns full modal on smaller devices. Hides on scroll down.
+ */
 
 const toggleMenu = () => {
     isMobileActive.value = !isMobileActive.value;
@@ -23,11 +32,23 @@ const checkScreenWidth = () => {
     }
 }
 
+// Two birds, one stone
 const wrapNavigate = (navigate, event) => {
     closeMenu();
     navigate(event);
 }
 
+const onScroll = () => {
+    currScrollPos = window.scrollY;
+    if (prevScrollPos > currScrollPos) {
+        isDown.value = false;
+    } else {
+        isDown.value = true;
+    }
+    prevScrollPos = currScrollPos;
+}
+
+window.addEventListener('scroll', onScroll)
 window.addEventListener('resize', checkScreenWidth);
 onBeforeUnmount(() => window.removeEventListener('resize', checkScreenWidth));
 checkScreenWidth();
@@ -35,7 +56,7 @@ checkScreenWidth();
 
 <template>
 
-    <div class="nav-wrapper">
+    <div class="nav-wrapper" :class="{ 'nav-wrapper--moveup': isDown }">
         <div class="nav-wrapper__inner">
 
             <NavHeader class="header-wrapper" :class="{ 'header-wrapper--alt-color': isMobileActive }">
@@ -44,7 +65,7 @@ checkScreenWidth();
                 </template>
                 <template #contact>
                     Vue Developer / Designer<br>
-                    <a href="mailto:someone@example.com">Thomas.Thorstensson@gmail.com</a>
+                    <a href="mailto:someone@example.com">Some info here</a>
                 </template>
                 <template #social>
                     <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn / </a><br>
@@ -55,17 +76,17 @@ checkScreenWidth();
             <div class="nav" :class="[isMobileActive ? 'nav--open' : 'nav--closed']">
                 <ul class="nav__list">
 
-                    <router-link to="/home" custom v-slot="{ isActive, navigate, href, route }">
+                    <router-link to="/home" custom v-slot="{ isActive, navigate, href }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
                             :class="{ 'nav--link-active': isActive }">Home</li>
                     </router-link>
 
-                    <router-link to="/work" custom v-slot="{ isActive, navigate, href, route }">
+                    <router-link to="/work" custom v-slot="{ isActive, navigate, href }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
                             :class="{ 'nav--link-active': isActive }">Work</li>
                     </router-link>
 
-                    <router-link to="/about" custom v-slot="{ isActive, navigate, href, route }">
+                    <router-link to="/about" custom v-slot="{ isActive, navigate, href }">
                         <li :href="href" @click="wrapNavigate(navigate, $event)" class="nav__item"
                             :class="{ 'nav--link-active': isActive }">About</li>
                     </router-link>
@@ -73,7 +94,7 @@ checkScreenWidth();
 
                 <NavMobileFooter class="footer-wrapper">
                     <template #contact>
-                        <a href="mailto:someone@example.com">Thomas.Thorstensson@gmail.com</a><br />
+                        <a href="mailto:someone@example.com">Some info here</a><br />
                     </template>
                     <template #social>
                         <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn<br></a>
@@ -104,27 +125,6 @@ checkScreenWidth();
     user-select: none;
 }
 
-/* 
-Flexbox doesn't go well with fixed so we use another container heaven.
-I prefer to control child component wrappers from parent. 
-*/
-
-
-.modal-open {
-  height: 100vh;
-  overflow-y: hidden;
-}
-
-.nav-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    margin: auto;
-    width: 100%;
-    z-index: 999;
-    overflow:hidden;
-}
-
 a,
 a:hover,
 a:active,
@@ -134,10 +134,28 @@ a:visited {
     text-decoration: none;
 }
 
+.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    z-index: 999;
+    overflow: hidden;
+    transition: top .4s;
+
+    &--moveup {
+        top: -100px;
+    }
+}
+
 .nav-wrapper__inner {
-    justify-content: space-between;
     display: flex;
-    flex: 0 1 auto;
     align-items: center;
     height: 100%;
     font-family: $sans-ui;
@@ -186,16 +204,14 @@ a:visited {
     background-color: $clr-secondary;
     transition: left .4s cubic-bezier(.075, .82, .165, 1);
 
-
-
     &--open {
         font-weight: $sans-ui-wt-def;
         left: 0%;
         touch-action: none;
-    -webkit-overflow-scrolling: none;
-    overflow: hidden;
-    /* Other browsers */
-    overscroll-behavior: none;
+        -webkit-overflow-scrolling: none;
+        overflow: hidden;
+        /* Other browsers */
+        overscroll-behavior: none;
     }
 
     &--closed {
@@ -288,7 +304,6 @@ a:visited {
     svg {
         stroke: $clr-secondary;
         transition: .2s;
-
         g {
             &:first-child {
                 opacity: 1;

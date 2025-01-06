@@ -1,11 +1,11 @@
 <script setup>
 import { RouterView } from 'vue-router';
-import Navbar from './components/Navbar.vue';
+import NavBar from '@/components/NavBar.vue';
 </script>
 
 <template>
   <nav>
-    <Navbar />
+    <NavBar />
   </nav>
   <div class="container-app">
     <RouterView v-slot="{ Component }">
@@ -17,6 +17,11 @@ import Navbar from './components/Navbar.vue';
 </template>
 
 <style lang="scss">
+
+:root {
+  overscroll-behavior: none;
+}
+
 html,
 body {
   background-color: $clr-primary;
