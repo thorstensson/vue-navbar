@@ -4,7 +4,7 @@
 
 # NavBar - Vue - JS - BEM
 
-A simple and responsive navigation bar with full modal on smaller devices. Hides on scroll down. Needed to code this up, to refresh my mind on how to, instead of using a component library. BEM makes it easier, still a semantic fan.
+A simple and responsive navigation bar with full modal on smaller devices. Hides on scroll down. Needed to code this up to refresh my mind on how to, instead of using a component library. And I love doing UI stuff. BEM makes it easier; still a semantic fan.
 
 ## Demo
 
