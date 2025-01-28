@@ -1,4 +1,4 @@
-![navbar](https://github.com/user-attachments/assets/02a6c6c5-7c0c-428e-a781-dedc169523db)
+![Image](https://github.com/user-attachments/assets/0b4bd0f1-7a65-47e7-91a5-fde2e93ee207)
 
 ![Static Badge](https://img.shields.io/badge/vue_v_3.4.27-vite_5.4.8-green) 
 
