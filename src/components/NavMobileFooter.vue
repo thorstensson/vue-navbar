@@ -17,7 +17,7 @@
 .social {
     display: inline;
     z-index: 100;
-    color: $clr-primary;
+    color: $primary;
     font-size: 15px;
     line-height: 1.2;
     text-decoration: none;

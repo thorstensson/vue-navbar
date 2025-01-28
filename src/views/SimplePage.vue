@@ -1,16 +1,15 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { watch } from 'vue';
 import json from '../assets/json/mockdata.json';
 
 const route = useRoute()
-const router = useRouter()
 const data = ref({ title: '', content: '' });
 
 watch(
     () => route.params.id,
-    (newId, oldId) => {
+    () => {
         data.value = json[route.params.id];
     }
 )
@@ -37,13 +36,13 @@ onMounted(() => {
 .page-text {
     margin-left: 0;
     margin-top: 120px;
-    color: $clr-secondary;
-    padding-left: $page-lpad;
-    padding-right: $page-rpad;
+    color: $secondary;
+    padding: 0 $page-hpad 0 $page-hpad;
 
     &__heading {
         font-family: $sans-text;
         font-size: $h1;
+        font-weight: $sans-text-wgt;
         margin-bottom: 40px;
         caret-color: transparent;
     }
@@ -54,17 +53,15 @@ onMounted(() => {
     }
 
     @include this-and-above('lg') {
-        padding-left: $page-lpad-lg;
-        padding-right: $page-rpad-lg;
+        padding: 0 calc($page-hpad + $roffset-lg) 0 $page-hpad-lg;
 
-        &__heading { 
+        &__heading {
             font-size: $h1-lg;
         }
     }
 
     @include this-and-above('xl') {
-        padding-left: $page-lpad-xl;
-        padding-right: $page-rpad-xl;
+        padding: 0 calc($page-hpad + $roffset-xl) 0 $page-hpad-xl;
 
         &__heading {
             font-size: $h1-xl;
@@ -72,8 +69,7 @@ onMounted(() => {
     }
 
     @include this-and-above('xxl') {
-        padding-left: $page-lpad-xxl;
-        padding-right: $page-rpad-xxl;
+        padding: 0 calc($page-hpad + $roffset-xxl) 0 $page-hpad-xxl;
 
         &__heading {
             font-size: $h1-xxl;

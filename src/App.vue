@@ -24,7 +24,7 @@ import NavBar from '@/components/NavBar.vue';
 
 html,
 body {
-  background-color: $clr-primary;
+  background-color: $primary;
   margin: 0;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -37,7 +37,6 @@ body {
 }
 
 .container-app {
-  background-color: blue;
   max-width: 100%;
   display: flex;
 }

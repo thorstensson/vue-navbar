@@ -6,13 +6,17 @@
 .sans-ui {
     font-family: variables.$sans-ui;
     font-optical-sizing: variables.$sans-ui-opt;
-    font-weight: variables.$sans-ui-wt-def;
+    font-weight: variables.$sans-ui-wgt;
     font-style: variables.$sans-ui-stl;
+    font-variation-settings:
+        "slnt" 0,
+        "FLAR" 0,
+        "VOLM" 0;
 }
 
 .sans-text {
     font-family: variables.$sans-text;
     font-optical-sizing: variables.$sans-text-opt;
-    font-weight: variables.$sans-text-wt-def;
+    font-weight: variables.$sans-text-wgt;
     font-style: variables.$sans-text-stl;
 }

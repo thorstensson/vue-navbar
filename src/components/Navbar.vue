@@ -61,15 +61,13 @@ checkScreenWidth();
 
             <NavHeader class="header-wrapper" :class="{ 'header-wrapper--alt-color': isMobileActive }">
                 <template #name>
-                    &bull; Thorstensson
+                    Your Name
                 </template>
                 <template #contact>
-                    Vue Developer / Designer<br>
-                    <a href="mailto:someone@example.com">Some info here</a>
+                    Creative Developer / UX
                 </template>
                 <template #social>
-                    <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn / </a><br>
-                    <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>&nbsp;Flickr</a>
+                    <a target='_blank' href='#'>Somelink</a><br>
                 </template>b
             </NavHeader>
 
@@ -97,8 +95,7 @@ checkScreenWidth();
                         <a href="mailto:someone@example.com">Some info here</a><br />
                     </template>
                     <template #social>
-                        <a target='_blank' href='https://www.linkedin.com/in/thomasthorstensson'>LinkedIn<br></a>
-                        <a target='_blank' href='https://www.flickr.com/photos/thomasthorstensson/'>Flickr</a>
+                        Maybe a little more here or icon
                     </template>
                 </NavMobileFooter>
             </div>
@@ -163,7 +160,7 @@ a:visited {
     font-size: 16px;
     max-width: 95%;
     margin: auto;
-    background-color: $clr-primary;
+    background-color: $primary;
 }
 
 .header-wrapper {
@@ -171,12 +168,12 @@ a:visited {
     align-items: center;
     flex: 1 1 auto;
     height: 80px;
-    color: $clr-secondary;
-    font-weight: isColorDark($clr-primary);
+    color: $secondary;
+    font-weight: isColorDark($primary);
 
     &--alt-color {
-        color: $clr-primary;
-        font-weight: isColorDark($clr-secondary);
+        color: $primary;
+        font-weight: isColorDark($secondary);
     }
 }
 
@@ -189,7 +186,7 @@ a:visited {
 
     :deep(.contact),
     :deep(.social) {
-        font-weight: isColorDark($clr-secondary);
+        font-weight: isColorDark($secondary);
     }
 }
 
@@ -200,12 +197,12 @@ a:visited {
     width: 100%;
     height: 100vh;
     // In moddal view font and background colors are inverted.
-    color: $clr-primary;
-    background-color: $clr-secondary;
+    color: $primary;
+    background-color: $secondary;
     transition: left .4s cubic-bezier(.075, .82, .165, 1);
 
     &--open {
-        font-weight: $sans-ui-wt-def;
+        font-weight: $sans-ui-wgt;
         left: 0%;
         touch-action: none;
         -webkit-overflow-scrolling: none;
@@ -234,22 +231,12 @@ a:visited {
         font-size: 60px;
         white-space: nowrap;
         line-height: 1.1;
+        transition: color .3s
     }
 
-    &__item::before {
-        content: "";
-        opacity: 0;
-        transition: opacity .5s ease-in-out;
-        line-height: 1;
-    }
-
-    &__item:hover::before,
-    &--link-active::before {
-        position: absolute;
-        content: "\2022";
-        white-space: nowrap;
-        left: -28px;
-        opacity: 1;
+    &__item:hover,
+    &--link-active {
+        color: $accent;
     }
 
     // Switch to desktop
@@ -258,9 +245,9 @@ a:visited {
         position: relative;
         width: initial;
         height: 80px;
-        background-color: $clr-primary;
-        color: $clr-secondary;
-        font-weight: isColorDark($clr-primary);
+        background-color: $primary;
+        color: $secondary;
+        font-weight: isColorDark($primary);
 
         &--closed {
             opacity: 1;
@@ -302,8 +289,9 @@ a:visited {
     width: 35px;
 
     svg {
-        stroke: $clr-secondary;
+        stroke: $secondary;
         transition: .2s;
+
         g {
             &:first-child {
                 opacity: 1;
@@ -329,7 +317,7 @@ a:visited {
     }
 
     &--anim svg {
-        stroke: $clr-primary;
+        stroke: $primary;
 
         g {
             &:first-child {
