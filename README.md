@@ -40,8 +40,10 @@ Start the server
 
 - [X] Add hide animation on scroll down.
 
-- [ ] Room for anything I haven't thought of yet.
+- [X] Changed fonts to my pet fonts for 2025, or two of them, for consistency across repos.
 
+- [X] Revamped colors to follow primary, secondary and accent, following my Colorpace theme which will reoccur
+across most repos.
 ## Contributing
 
 Fork and improve, I write too much CSS!
