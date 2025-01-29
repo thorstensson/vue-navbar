@@ -17,7 +17,7 @@
 .social {
     display: inline;
     z-index: 100;
-    color: $primary;
+    color: $secondary;
     font-size: 15px;
     line-height: 1.2;
     text-decoration: none;
@@ -34,7 +34,7 @@
     right: 0;
     border: none;
     height: 2px;
-    color: black;
-    background-color: black;
+    color: $secondary;
+    background-color: $secondary;
 }
 </style>

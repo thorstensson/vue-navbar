@@ -172,8 +172,8 @@ a:visited {
     font-weight: isColorDark($primary);
 
     &--alt-color {
-        color: $primary;
-        font-weight: isColorDark($secondary);
+        color: $secondary;
+
     }
 }
 
@@ -186,7 +186,7 @@ a:visited {
 
     :deep(.contact),
     :deep(.social) {
-        font-weight: isColorDark($secondary);
+        font-weight: isColorDark($primary);
     }
 }
 
@@ -196,9 +196,8 @@ a:visited {
     right: 0;
     width: 100%;
     height: 100vh;
-    // In moddal view font and background colors are inverted.
-    color: $primary;
-    background-color: $secondary;
+    color: $secondary;
+    background-color: $primary;
     transition: left .4s cubic-bezier(.075, .82, .165, 1);
 
     &--open {
@@ -224,6 +223,12 @@ a:visited {
         list-style: none;
         width: fit-content;
         text-align: center;
+        font-family:$sans-text;
+
+            // Bubbles
+    @include this-and-above('lg') {
+        font-family:$sans-ui;
+    }
     }
 
     &__item {
@@ -317,7 +322,7 @@ a:visited {
     }
 
     &--anim svg {
-        stroke: $primary;
+        stroke: $secondary;
 
         g {
             &:first-child {
